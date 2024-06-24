@@ -1,2 +1,1 @@
-# SaasTensorGoBackend
-subscription using stripe
+# TensorGo-Project
