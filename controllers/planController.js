@@ -21,14 +21,6 @@ exports.getPlanController =catchAsyncError( async (req, res) => {
          );
    
 })
-exports.getidPlanController =catchAsyncError( async (req, res) => {
-  const id = req.params.id;
-        const plans = await Plan.find({serviceId : id});
-        res.status(200).send(
-            { plans}
-         );
-   
-})
 
 exports.getSinglePlanController =catchAsyncError( async (req, res) => {
     const { id } = req.params;

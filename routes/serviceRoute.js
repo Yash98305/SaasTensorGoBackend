@@ -7,5 +7,6 @@ router.route('/create').post(isAuthenticatedUser,authorizeRoles("superadmin"),pa
 router.route('/update/:id').put(isAuthenticatedUser,authorizeRoles("superadmin"),pages.updateServiceController)
 router.route('/delete/:id').delete(isAuthenticatedUser,authorizeRoles("superadmin"),pages.deleteServiceController)
 router.route('/get-all').get(isAuthenticatedUser,pages.getServiceController)
+router.route('/get-all/:id').get(pages.getplansController)
 router.route('/get-single/:id').get(isAuthenticatedUser,pages.getSingleServiceController)
 module.exports = router

@@ -68,3 +68,18 @@ exports.updateServiceController = catchAsyncError(async (req, res) => {
     service: updatedService,
   });
 });
+
+exports.getplansController = catchAsyncError(async(req,res)=>{
+  const { id } = req.params;
+  const plans = await Service.findById(id)
+  console.log(plans);
+  if (!plans) return res.status(404).send({ msg: 'No plans found' });
+  const t  = plans.plans.map((plan) =>{
+return plan._id
+  })
+  const plans1 = await Plan.find({_id:{$in:t}})
+  res.status(200).send({
+    success: true,
+    plans:plans1,
+  });
+})
