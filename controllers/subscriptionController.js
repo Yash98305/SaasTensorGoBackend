@@ -72,8 +72,8 @@ exports.createSubscriptionCheckoutController = catchAsyncError(
           quantity: 1,
         },
       ],
-      success_url: `http://localhost:5173/success`,
-      cancel_url: `http://localhost:5173/cancel`,
+      success_url: `https://teal-conkies-fe4d2f.netlify.app/success`,
+      cancel_url: `https://teal-conkies-fe4d2f.netlify.app/cancel`,
     });
 
     let user = await User.findById(userId);
